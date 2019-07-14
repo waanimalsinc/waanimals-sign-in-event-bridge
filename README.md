@@ -33,3 +33,7 @@ serverless deploy --stage dev
 ![Event Bridge Setup 02](img/event-bridge-setup-02.png)
 
 ![Event Bridge Setup 03](img/event-bridge-setup-03.png)
+
+## Testing
+
+![Event Bridge Test 01](img/event-bridge-test-01.png)
