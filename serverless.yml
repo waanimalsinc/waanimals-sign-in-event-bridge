@@ -1,0 +1,22 @@
+service: waanimals-sign-in-event-bridge
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+  environment: ${file(env.yml):dev}
+
+provider:
+  name: aws
+  stage: dev
+  region: ap-southeast-2
+  runtime: python3.7
+  environment:
+    SLACK_API_TOKEN: ${self:custom.environment.SLACK_API_TOKEN}
+    SLACK_CHANNEL_ID: ${self:custom.environment.SLACK_CHANNEL_ID}
+
+functions:
+  alert:
+    handler: handler.alert
+
+plugins:
+  - serverless-python-requirements
